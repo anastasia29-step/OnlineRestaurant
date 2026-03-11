@@ -36,7 +36,7 @@ range.addEventListener("input", function(){
         spiceValue.textContent = range.value
     }
 })
-
+let body = document.querySelector("body")
 fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
     .then(pasuxi => pasuxi.json())
     .then((data) => {
@@ -44,7 +44,7 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
 
         data.forEach((item) => right.innerHTML += card(item))
     })
-    .catch(() => right.innerHTML += `<h1> Error 404...</h1>`)
+    .catch(() => body.innerHTML += `<h1> Error 404...</h1>`)
 
 function card(item) {
     return ` <div class="card">
