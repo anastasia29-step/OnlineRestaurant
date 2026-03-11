@@ -66,7 +66,15 @@ function reset(e) {
     let checks = document.querySelectorAll(".check")
     checks[0].checked = false
     checks[1].checked = false
-    getAllProducts()
+
+    fetch("https://restaurant.stepprojects.ge/api/Products/GetFiltered")
+    .then(pasuxi => pasuxi.json())
+    .then(data => {
+        right.innerHTML = ""
+        data.forEach(item => {
+            right.innerHTML += card(item)
+        })
+    })
 }
 function card(item) {
     return ` <div class="card">
