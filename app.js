@@ -15,6 +15,8 @@ let range = document.querySelector(".range")
 let checks = document.querySelector(".check")
 let filter = document.querySelector(".filteredCard")
 let spiceValue = document.querySelector(".spiceValue")
+
+
 function apply(e) {
     e.preventDefault()
     let spiciness = range.value
