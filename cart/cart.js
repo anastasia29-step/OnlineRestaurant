@@ -32,4 +32,6 @@ function increase (quantity, id, price){
         body: JSON.stringify(info)
     }).then(pasuxi => pasuxi.json())
     .then(() => getAllCart())
+    console.log("blbajkbxjka");
+    
 }
