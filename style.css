@@ -181,6 +181,7 @@ ul li::after {
     height: 6px;
     background-repeat: no-repeat;
 }
+
 .sectionCard {
     display: flex;
     width: 100%;
@@ -334,12 +335,12 @@ ul li::after {
     border-radius: 17px;
     cursor: pointer;
     transition: 0.5s;
+    position: relative;
 }
 
 .card:hover {
     box-shadow: 0 0 20px black;
 }
-
 .card img {
     width: 100%;
     height: 202px;
@@ -375,21 +376,42 @@ ul li::after {
 }
 
 .card .bottom button {
-    height: 40px;
-    width: 120px;
+    height: 38px;
+    width: 104px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px double rgb(26, 26, 26);
     background-color: transparent;
-    transition: 0.3s;
+    transition: 0.5s;
     cursor: pointer;
+    position: relative;
+}
+
+.card .bottom button::before {
+    content: "";
+    top: -3px;
+    left: -4px;
+    position: absolute;
+    background: url(/photo/bt_border.png);
+    width: 108px;
+    height: 42px;
 }
 
 .card .bottom button:hover {
     background-color: #FF0000;
     color: white;
     border: none;
+}
+
+.card .bottom button:hover::before {
+    content: "";
+    top: -3px;
+    left: -4px;
+    position: absolute;
+    background: url(/photo/bt_hoverborder.png);
+    width: 108px;
+    height: 42px;
 }
 
 footer {
