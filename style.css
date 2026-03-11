@@ -154,7 +154,7 @@ ul li {
     height: 100%;
     font-size: 20px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.5s;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
