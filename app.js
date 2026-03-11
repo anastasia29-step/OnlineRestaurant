@@ -8,6 +8,14 @@ fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
         console.log(data);
         data.forEach((item) => ul.innerHTML += `<li onclick="changeCategory(${item.id})">${item.name}</li>`)
     })
+function changeCategory(id) {
+    fetch(`https://restaurant.stepprojects.ge/api/Categories/GetCategory/${id}`)
+        .then(pasuxi => pasuxi.json())
+        .then(data => {
+            console.log(data);
+            data.forEach((item) => ul.innerHTML += `<li onclick="changeCategory(${item.id})">${item.name}</li>`)
+        })
+}
 function getAllProducts() {
     fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
         .then(pasuxi => pasuxi.json())
@@ -68,13 +76,13 @@ function reset(e) {
     checks[1].checked = false
 
     fetch("https://restaurant.stepprojects.ge/api/Products/GetFiltered")
-    .then(pasuxi => pasuxi.json())
-    .then(data => {
-        right.innerHTML = ""
-        data.forEach(item => {
-            right.innerHTML += card(item)
+        .then(pasuxi => pasuxi.json())
+        .then(data => {
+            right.innerHTML = ""
+            data.forEach(item => {
+                right.innerHTML += card(item)
+            })
         })
-    })
 }
 function card(item) {
     return ` <div class="card">
