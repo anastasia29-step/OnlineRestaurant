@@ -376,6 +376,10 @@ ul li:hover {
 footer {
     background-color: #FF0000;
     height: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     color: white;
 }
