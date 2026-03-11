@@ -9,14 +9,14 @@ fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
         data.forEach((item) => ul.innerHTML += `<li onclick="changeCategory(${item.id})">${item.name}</li>`)
     })
 function changeCategory(id) {
+    right.innerHTML = ""
     fetch(`https://restaurant.stepprojects.ge/api/Categories/GetCategory/${id}`)
         .then(pasuxi => pasuxi.json())
         .then(data => {
-            console.log(data);
-            data.forEach((item) => ul.innerHTML += `<li onclick="changeCategory(${item.id})">${item.name}</li>`)
+            data.products.forEach((item) => right.innerHTML += card(item))
         })
 }
-function getAllProducts() {
+function showAll() {
     fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
         .then(pasuxi => pasuxi.json())
         .then(data => {
