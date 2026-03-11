@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <section class="FirstLine">
+
+    <div class="beside" id="navbar">
+        <div class="left">
+            <a href="./index.html"><img src="./photo/logo.png" alt=""></a>
+        </div>
+
+        <div class="right">
+            <a href="./index.html">Home</a>
+            <a href="./Cart.html" class="a">Cart</a>
+            <a href="./Cart.html">
+            <img src="./photo/istockphoto-609074524-612x612 Background Removed.png" alt=""></a>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <h1>Fast And Efficient, Online Ordering You Must Try.</h1>
+    </div>
+
+</section>
+    <section class="section">
+        <h1>Categories</h1>
+        <ul>
+            <li onclick="showAll()">All</li>
+        </ul>
+        <img src="./photo/border.png" alt="">
+    </section>
+    <form class="sectionCard">
+        <div class="leftSide">
+            <div class="filteredCard">
+                <div class="first">
+                    <p>Filter</p>
+                    <i class="fa-solid fa-filter"></i>
+                </div>
+                <p>Spiciness:</p>
+                <input class="range" type="range" min="0" max="4" value="0">
+                <div class="next">
+                    <input class="check" type="checkbox">
+                    <p>No Nuts</p>
+                </div>
+                <div class="next">
+                    <input class="check" type="checkbox">
+                    <p>Vegetarian Only</p>
+                </div>
+                <button class="reset" onclick="reset()">RESET</button>
+                <button class="apply" onclick="apply()">APPLY FILTER</button>
+            </div>
+        </div>
+        <div class="rightSide">
+           
+        </div>
+    </form>
+
+    <footer>
+        <img src="./photo/border.png" alt="">
+        <p>© Step Ordering 2026, All rights reserved</p>
+    </footer>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
