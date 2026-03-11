@@ -17,20 +17,7 @@ let filter = document.querySelector(".filteredCard")
 let spiceValue = document.querySelector(".spiceValue")
 
 
-function apply(e) {
-    e.preventDefault()
-    let spiciness = range.value
-    let nuts = checks[0].checked
-    let vegeterian = checks[1].checked
-    fetch(`https://restaurant.stepprojects.ge/api/Products/GetFiltered?vegeterian=${vegeterian}&nuts=${nuts}&spiciness=${spiciness}&categoryId=${categoryId}`)
-        .then(pasuxi => pasuxi.json())
-        .then(data => {
-            right.innerHTML = ""
-            data.forEach(item => {
-                right.innerHTML += card(item)
-            })
-        })
-}
+
 range.addEventListener("input", function () {
     if (range.value == 0) {
         spiceValue.textContent = "Not Chosen"
@@ -68,6 +55,20 @@ function card(item) {
                     <button>Add to cart</button>
                 </div>
             </div>`
+}
+function apply(e) {
+    e.preventDefault()
+    let spiciness = range.value
+    let nuts = checks[0].checked
+    let vegeterian = checks[1].checked
+    fetch(`https://restaurant.stepprojects.ge/api/Products/GetFiltered?vegeterian=${vegeterian}&nuts=${nuts}&spiciness=${spiciness}&categoryId=${categoryId}`)
+        .then(pasuxi => pasuxi.json())
+        .then(data => {
+            right.innerHTML = ""
+            data.forEach(item => {
+                right.innerHTML += card(item)
+            })
+        })
 }
 
 window.addEventListener("scroll", function () {
