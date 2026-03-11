@@ -8,7 +8,15 @@ fetch("https://restaurant.stepprojects.ge/api/Categories/GetAll")
         console.log(data);
         data.forEach((item) => ul.innerHTML += `<li onclick="changeCategory(${item.id})">${item.name}</li>`)
     })
-
+function getAllProducts() {
+    fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
+        .then(pasuxi => pasuxi.json())
+        .then(data => {
+            right.innerHTML = ""
+            data.forEach(item => right.innerHTML += card(item))
+        })
+        .catch(() => body.innerHTML = `<h1> Error 404...</h1>`)
+}
 let sectionCard = document.querySelector(".sectionCard")
 let left = document.querySelector(".leftSide")
 let range = document.querySelector(".range")
@@ -59,13 +67,12 @@ function card(item) {
 function apply(e) {
     e.preventDefault()
     let spiciness = range.value
+    let checks = document.querySelectorAll(".check")
     let nuts = checks[0].checked
     let vegeterian = checks[1].checked
     fetch(`https://restaurant.stepprojects.ge/api/Products/GetFiltered?vegeterian=${vegeterian}&nuts=${nuts}&spiciness=${spiciness}`)
         .then(pasuxi => pasuxi.json())
         .then((data) => {
-
-
             right.innerHTML = ""
             data.forEach(item => {
                 right.innerHTML += card(item)
@@ -74,25 +81,13 @@ function apply(e) {
 
 }
 function reset(e) {
-
     e.preventDefault()
-
     range.value = 0
     spiceValue.textContent = "Not Chosen"
     let checks = document.querySelectorAll(".check")
     checks[0].checked = false
     checks[1].checked = false
-
-    fetch("https://restaurant.stepprojects.ge/api/Products/GetFiltered")
-        .then(pasuxi => pasuxi.json())
-        .then(data => {
-            right.innerHTML = ""
-            data.forEach(item => {
-                right.innerHTML += card(item)
-            })
-
-        })
-
+    getAllProducts()
 }
 
 window.addEventListener("scroll", function () {
