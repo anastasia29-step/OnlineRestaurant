@@ -1,4 +1,4 @@
-let kalataList = document.querySelector("kalataList")
+let kalataList = document.getElementById("kalataList")
 function getAllCart() {
     fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
         .then(pasuxi => pasuxi.json())
