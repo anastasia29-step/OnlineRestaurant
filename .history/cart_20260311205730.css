@@ -42,13 +42,8 @@ section.SecondLine a:nth-child(3) {
     height: 7px;
 }
 
-.secondimg {
-    margin-top: -4px;
-
-}
-
 .secondimg img {
     width: 100%;
-    height: 7px;
     margin-bottom: 1000px;
+    margin-top: -15px;
 }
