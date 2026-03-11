@@ -43,27 +43,6 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
     })
     .catch(() => body.innerHTML += `<h1> Error 404...</h1>`)
 
-function card(item) {
-    return ` <div class="card">
-                <img src="${item.image}" alt="">
-                <h1>${item.name}</h1>
-                <p>Spiciness: ${item.spiciness}</p>
-                <div class="sides">
-                    <div class="checks">
-                        <input type="checkbox" ${item.nuts ? "checked" : ""}>
-                        <p>Nuts</p>
-                    </div>
-                    <div class="checks">
-                        <input type="checkbox" ${item.vegeterian ? "checked" : ""}>
-                        <p>Vegeterian</p>
-                    </div>
-                </div>
-                <div class="bottom">
-                    <h1 style="font-size: 24px">$ ${item.price} </h1>
-                    <button>Add to cart</button>
-                </div>
-            </div>`
-}
 function apply(e) {
     e.preventDefault()
     let spiciness = range.value
@@ -89,7 +68,27 @@ function reset(e) {
     checks[1].checked = false
     getAllProducts()
 }
-
+function card(item) {
+    return ` <div class="card">
+                <img src="${item.image}" alt="">
+                <h1>${item.name}</h1>
+                <p>Spiciness: ${item.spiciness}</p>
+                <div class="sides">
+                    <div class="checks">
+                        <input type="checkbox" ${item.nuts ? "checked" : ""}>
+                        <p>Nuts</p>
+                    </div>
+                    <div class="checks">
+                        <input type="checkbox" ${item.vegeterian ? "checked" : ""}>
+                        <p>Vegeterian</p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <h1 style="font-size: 24px">$ ${item.price} </h1>
+                    <button>Add to cart</button>
+                </div>
+            </div>`
+}
 window.addEventListener("scroll", function () {
 
     if (window.scrollY > 50) {
