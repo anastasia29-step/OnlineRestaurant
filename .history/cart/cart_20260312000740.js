@@ -35,14 +35,3 @@ function increase (quantity, id, price){
     console.log("blbajkbxjka");
     
 }
-
-let nav = document.getElementById("navbar")
-window.addEventListener("scroll", function () {
-
-    if (window.scrollY > 50) {
-        nav.classList.add("active")
-    } else {
-        nav.classList.remove("active")
-    }
-
-})
