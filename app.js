@@ -21,16 +21,16 @@ function apply(e) {
     let nuts = checks[0].checked
     let vegeterian = checks[1].checked
     fetch(`https://restaurant.stepprojects.ge/api/Products/GetFiltered?vegeterian=${vegeterian}&nuts=${nuts}&spiciness=${spiciness}&categoryId=${categoryId}`)
-    .then(pasuxi => pasuxi.json())
-    .then(data => {
-        right.innerHTML = ""
-        data.forEach(item => {
-            right.innerHTML += card(item)
+        .then(pasuxi => pasuxi.json())
+        .then(data => {
+            right.innerHTML = ""
+            data.forEach(item => {
+                right.innerHTML += card(item)
+            })
         })
-    })
 }
-range.addEventListener("input", function(){
-    if(range.value == 0){
+range.addEventListener("input", function () {
+    if (range.value == 0) {
         spiceValue.textContent = "Not Chosen"
     } else {
         spiceValue.textContent = range.value
