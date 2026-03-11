@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <section class="FirstLine">
 
         <div class="beside" id="navbar">
@@ -24,8 +25,8 @@
 
             <div class="right">
                 <a href="./index.html">Home</a>
-                <a href="./cart/cart.html" class="a">Cart</a>
-                <a href="./cart/cart.html">
+                <a href="./Cart.html" class="a">Cart</a>
+                <a href="./Cart.html">
                     <img src="./photo/istockphoto-609074524-612x612 Background Removed.png" alt=""></a>
             </div>
         </div>
@@ -42,7 +43,7 @@
         </ul>
         <img src="./photo/border.png" alt="">
     </section>
-    <div class="sectionCard">
+    <form class="sectionCard">
         <div class="leftSide">
             <div class="filteredCard">
                 <div class="first">
@@ -59,14 +60,14 @@
                     <input class="check" type="checkbox">
                     <p>Vegetarian Only</p>
                 </label>
-                <button type="button" class="reset" onclick="reset()">RESET</button>
-                <button type="button" class="apply" onclick="apply()">APPLY FILTER</button>
+                <button type="button" class="reset" onclick="reset(event)">RESET</button>
+                <button type="button" class="apply" onclick="apply(event)">APPLY FILTER</button>
             </div>
         </div>
         <div class="rightSide">
 
         </div>
-    </div>
+    </form>
 
     <footer>
             <p>© Step Ordering 2026, All rights reserved</p>
