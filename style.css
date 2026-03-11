@@ -382,4 +382,21 @@ footer {
     align-items: center;
     text-align: center;
     color: white;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 18px;
+
+}
+footer::after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -4px;
+    margin: auto;
+    content: "";
+    background: url(https://restaurant.stepprojects.ge/images/copyright_border.png);
+    width: 100%;
+    height: 6px;
+    background-repeat: no-repeat;
 }
