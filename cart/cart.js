@@ -30,7 +30,7 @@ function increase (quantity, id, price){
             "Content-Type": "application/json"
         },
         body: JSON.stringify(info)
-    }).then(pasuxi => pasuxi.json())
+    }).then(pasuxi => pasuxi.text())
     .then(() => getAllCart())
     console.log("blbajkbxjka");
     
