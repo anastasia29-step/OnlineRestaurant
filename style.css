@@ -71,8 +71,7 @@ ul::after {
 }
 
 .beside.active {
-    backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(5, 5, 5, 0.8);
 }
 
 .beside.active::after {
@@ -108,7 +107,9 @@ ul::after {
 .beside .right a {
     text-decoration: none;
     color: white;
-    font-family: "Roboto Slab", serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .beside .right .a {
