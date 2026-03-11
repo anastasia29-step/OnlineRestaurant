@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section.SecondLine {
+    background-color: #FF0000;
+    height: 35px;
+    display: flex;
+}
+
+section.SecondLine img {
+    width: 100%;
+}

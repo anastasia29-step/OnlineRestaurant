@@ -84,6 +84,14 @@ ul::after {
     height: 100px;
     background-image: url("photo/border.png");
     background-repeat: repeat-x;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-image: url("photo/border.png");
+    background-repeat: repeat-x;
 }
 
 .beside .right {

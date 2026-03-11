@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto Slab", serif;
 }
 
 section.SecondLine {
@@ -10,30 +9,26 @@ section.SecondLine {
     height: 35px;
     display: flex;
     width: 100%;
+    margin-top: -4px;
     gap: 20px;
     padding-left: 100px;
     align-items: center;
-    color: white;
 }
 
 section.SecondLine a {
     text-decoration: none;
-    color: white;
-}
-
-section.SecondLine a:nth-child(3) {
-    color: yellow;
+    
 }
 
 .fisrtimg {
     width: 100%;
     height: 15px;
-    margin-top: -14px;
+    margin-top: -11px;
 }
 
 .secondimg {
     width: 100%;
     height: 5px;
     margin-bottom: 1000px;
-    margin-top: -15px;
+    margin-top: -12px;
 }
