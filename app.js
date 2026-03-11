@@ -117,7 +117,7 @@ function addToCart(id, price) {
         },
         body: JSON.stringify(info)
     }).then((pasuxi) => pasuxi.json())
-        .then((data) => {
+        .then(() => {
             let existing = item.product.id
             if (existing) {
                 fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", {
