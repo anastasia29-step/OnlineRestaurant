@@ -83,7 +83,7 @@ ul::after {
     width: 100%;
     height: 100px;
     background-image: url("photo/border.png");
-    background-position: bottom;
+    background-position: center;
     background-repeat: repeat-x;
 }
 
