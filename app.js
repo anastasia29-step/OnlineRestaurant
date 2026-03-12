@@ -75,7 +75,7 @@ function apply() {
                 right.innerHTML += card(item)
             })
         })
-        
+
 }
 function reset() {
     range.value = 0
@@ -114,24 +114,44 @@ function card(item) {
                 </div>
             </div>`
 }
+// function addToCart(id, price) {
+//     let info = {
+//         quantity: 1,
+//         price: price,
+//         productId: id
+//     }
+//     fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
+//         method: "POST",
+//         headers: {
+//             accept: "text/plain",
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(info)
+//     }).then((pasuxi) => pasuxi.json())
+//         .then(() => {
+//             let existing = item.product.id
+//             if (existing) {
+//                 fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", {
+//                     method: "PUT",
+//                     headers: {
+//                         "Content-Type": "application/json"
+//                     },
+//                     body: JSON.stringify({
+//                         id: existing.id,
+//                         quantity: existing.quantity + 1
+//                     })
+//                 })
+//             }
+//         })
+// }
 function addToCart(id, price) {
-    let info = {
-        quantity: 1,
-        price: price,
-        productId: id
-    }
-    fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
-        method: "POST",
-        headers: {
-            accept: "text/plain",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(info)
-    }).then((pasuxi) => pasuxi.json())
-        .then(() => {
-            let existing = item.product.id
+    fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+        .then(pasuxi => pasuxi.json())
+        .then(basketItems => {
+            let existing = basketItems.find(item => item.product.id === id);
+
             if (existing) {
-                fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", {
+                fetch(`https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket/${existing.id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"
@@ -141,8 +161,29 @@ function addToCart(id, price) {
                         quantity: existing.quantity + 1
                     })
                 })
+                    .then(pasuxi => pasuxi.json())
+                    .then(data => console.log("Updated cart:", data))
+                    .catch(err => console.error(err))
+            } else {
+                let info = {
+                    quantity: 1,
+                    price: price,
+                    productId: id
+                }
+                fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
+                    method: "POST",
+                    headers: {
+                        accept: "text/plain",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(info)
+                })
+                    .then(pasuxi => pasuxi.json())
+                    .then(data => console.log("Added to cart:", data))
+                    .catch(err => console.error(err))
             }
         })
+        .catch(err => console.error("Error fetching basket:", err));
 }
 window.addEventListener("scroll", function () {
 

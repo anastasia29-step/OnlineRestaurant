@@ -1,5 +1,6 @@
 let kalataList = document.getElementById("kalataList")
 function getAllCart() {
+    kalataList.innerHTML = ""
     fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
         .then(pasuxi => pasuxi.json())
         .then(data => data.forEach((item) => kalataList.innerHTML += list(item)))
@@ -15,15 +16,15 @@ function list(item) {
             <button>X</button>
         </li>`
 }
-function increase (quantity, id, price){
+function increase(quantity, id, price) {
     quantity++
     let info = {
         quantity: quantity,
-        price: price, 
+        price: price,
         productId: id
     }
     kalataList.innerHTML = ""
-    fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket",{
+    fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", {
         method: "PUT",
         headers: {
             accept: "*/*",
@@ -31,9 +32,8 @@ function increase (quantity, id, price){
         },
         body: JSON.stringify(info)
     }).then(pasuxi => pasuxi.text())
-    .then(() => getAllCart())
-    console.log("blbajkbxjka");
-    
+        .then(() => getAllCart())
+
 }
 
 let nav = document.getElementById("navbar")
