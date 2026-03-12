@@ -147,13 +147,14 @@ function card(item) {
 function addToCart(id, price) {
     fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
         .then(pasuxi => pasuxi.json())
-        .then(basketItems => {
-            let existing = basketItems.find(item => item.product.id === id);
+        .then(data => {
+            let existing = data.find(item => item.product.id === id);
 
             if (existing) {
                 fetch(`https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket/${existing.id}`, {
                     method: "PUT",
                     headers: {
+                        accept: "*/*",
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
