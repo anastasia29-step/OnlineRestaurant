@@ -11,6 +11,112 @@ body {
     background-size: contain;
 }
 
+.FirstLine {
+    height: 48vh;
+    background-image: url(../photo/inner_banner.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 170px;
+    padding-top: 20px;
+}
+
+.beside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 170px;
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.beside.active {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.beside.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("../photo/border.png");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.beside .right {
+    display: flex;
+    gap: 20px;
+    padding-right: 60px;
+    padding-top: 20px;
+}
+
+.FirstLine .right :first-child:hover {
+    color: #FFCC00;
+}
+
+.right .b:hover {
+    color: #FFCC00;
+}
+
+.beside .right a {
+    text-decoration: none;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.beside .right .a {
+    background-color: red;
+    width: 50px;
+    height: 25px;
+    padding-top: 2px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: -2px;
+    margin-left: 40px;
+}
+
+.beside .right .a:hover+a img,
+.b {
+    transform: translateX(50px);
+}
+
+.beside .right .b {
+    transition: transform 3.0s;
+}
+
+.beside .right img {
+    width: 60px;
+    margin-top: -21px;
+    margin-left: -25px;
+    transition: transform 3.0s;
+}
+
+.FirstLine .bottom h1 {
+    text-align: center;
+    color: white;
+    margin-top: 180px;
+    margin-right: 250px;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: "Roboto Slab", serif;
+}
+
+.section h1 {
+    font-weight: 500;
+    font-size: 35px;
+}
+
 section.SecondLine {
     background-color: #FF0000;
     height: 35px;
@@ -57,10 +163,13 @@ section.SecondLine a:nth-child(3) {
 
 
 .kalataList {
-    width: 80%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 .thirdsection {
@@ -69,14 +178,19 @@ section.SecondLine a:nth-child(3) {
     align-items: center;
     margin: 30px;
 }
-.mainList{
+
+.mainList {
+    width: 80%;
+    margin: auto;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
+
 .fourthsection {
-    margin-left: 200px;
-    margin-right: 200px;
     display: flex;
+    margin: auto;
+    width: 80%;
     background-color: #F3F3F3;
     justify-content: space-between;
     padding-left: 50px;
@@ -84,22 +198,60 @@ section.SecondLine a:nth-child(3) {
     padding-bottom: 20px;
     padding-top: 20px;
     align-items: center;
+    position: relative;
 }
-.fourthsection p{
+
+.fourthsection p {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     font-weight: 500;
 }
+
+.last {
+    margin-left: 950px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: xx-large;
+}
+
 .fourthsection::after {
     position: absolute;
     content: "";
     left: 0;
     right: 0;
-    bottom: 151px;
+    bottom: 0;
     background: url(../photo/gray_Hborder.png);
     height: 6px;
-    margin-left: 200px;
-    margin-right: 200px;
+}
+
+.kalata:hover::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 30px;
+    background: url(../photo/gray_Hborder.png);
+    height: 6px;
+    margin-left: 270px;
+    margin-right: 274px;
+}
+
+.remove {
+    width: 50px;
+    height: 50px;
+    font-size: x-large;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.remove:hover {
+    background-color: #FF0000;
+    color: white;
+    border-radius: 50%;
 }
 
 .grayborder img {
@@ -112,20 +264,110 @@ section.SecondLine a:nth-child(3) {
     gap: 50px;
 }
 
+.kalata {
+    margin: auto;
+    width: 100%;
+}
 
-.kalataList li{
+.kalataList li {
+    width: 80%;
+    height: 120px;
     display: flex;
-    margin-left: 200px;
-    margin-right: 200px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: white;
+    margin: auto;
+    margin-left: 120px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.kalataList li img{
-    width: 100px;
-    height: 100px;
+
+.kalataList li img {
+    width: 80px;
 }
-.kalataList li:hover{
+
+.increase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bebdbd;
+    background-color: white;
+    width: 80px;
+    height: 30px;
+    padding: 5px;
+    gap: 10px;
+    align-items: center;
+}
+
+.increase button {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s
+}
+
+.increase button:hover {
+    background-color: #FF0000;
+    color: white;
+}
+
+.kalataList li:hover {
     background-color: #F3F3F3;
+    border: none;
+    color: black;
+}
+
+.checkout {
+    width: 233px;
+    height: 45px;
+    margin-left: 900px;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: #E80F0E;
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.checkout:hover {
+    background-color: #FFCC00;
+    color: white;
 }
 
 footer {
-    margin-top: 1000px;
+    background-color: #FF0000;
+    height: 60px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 18px;
+
+}
+
+footer::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -4px;
+    margin: auto;
+    content: "";
+    background: url(https://restaurant.stepprojects.ge/images/copyright_border.png);
+    width: 100%;
+    height: 6px;
+    background-repeat: no-repeat;
 }

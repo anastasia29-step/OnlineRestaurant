@@ -115,49 +115,69 @@ function card(item) {
             </div>`
 }
 function addToCart(id, price) {
-    let user = localStorage.getItem("user")
+    let user = localStorage.getItem("user");
     if (!user) {
-        right.innerHTML = ""
-        left.innerHTML = ""
+        right.innerHTML = "";
+        left.innerHTML = "";
         right.innerHTML += `<div class="suggestion">
-                <img src="./photo/oops.png"
-                    alt="">
-                <h1>I see you're not signed in yet! <br> Let's go sign in or <br> if you're not registered, <br> let's
-                    register now!</h1>
+                <img src="./photo/oops.png" alt="">
+                <h1>I see you're not signed in yet! <br> Let's go sign in or <br> if you're not registered, <br> let's register now!</h1>
                 <button onclick="auth()">Sign In Now!</button>
-            </div>`
-        return
+            </div>`;
+        return;
     }
-    let info = {
-        quantity: 1,
-        price: price,
-        productId: id
-    }
-    fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
-        method: "POST",
-        headers: {
-            accept: "text/plain",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(info)
-    }).then((pasuxi) => pasuxi.json())
-        .then(() => {
-            ((item) => {
-                let existing = item.product.id
-                if (existing) {
-                    fetch("https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket", {
-                        method: "PUT",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            id: existing.id,
-                            quantity: existing.quantity + 1
-                        })
-                    })
-                }
-            })
-        })
+    fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+        .then(pasuxi => pasuxi.json())
+        .then(cartItems => {
+            let existingItem = cartItems.find(item => item.product.id === id);
+
+            if (existingItem) {
+                let updatedInfo = {
+                    productId: id,
+                    quantity: existingItem.quantity + 1
+                };
+
+                fetch(`https://restaurant.stepprojects.ge/api/Baskets/UpdateBasket/${existingItem.id}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(updatedInfo)
+                }).then(() => refreshCart());
+
+            } else {
+                let info = {
+                    quantity: 1,
+                    price: price,
+                    productId: id
+                };
+
+                fetch("https://restaurant.stepprojects.ge/api/Baskets/AddToBasket", {
+                    method: "POST",
+                    headers: {
+                        accept: "text/plain",
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(info)
+                }).then(() => refreshCart()); 
+            }
+        });
+}
+
+function refreshCart() {
+    let kalataList = document.querySelector(".kalataList");
+    kalataList.innerHTML = "";
+    fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
+        .then(res => res.json())
+        .then(cartItems => {
+            cartItems.forEach(item => {
+                kalataList.innerHTML += `
+                    <li>
+                        <h3>${item.product.name}</h3>
+                        <p>Quantity: ${item.quantity}</p>
+                        <p>Price: ${item.price} ₾</p>
+                    </li>
+                `;
+            });
+        });
 }
 function auth() {
     window.location.href = "./auth/auth.html"
