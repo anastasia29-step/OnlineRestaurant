@@ -69,11 +69,7 @@ section.SecondLine a:nth-child(3) {
     padding-bottom: 20px;
     padding-top: 20px;
     align-items: center;
-}
-
-.grayborder img {
-    width: 100%;
-    height: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .fourthsection .right {

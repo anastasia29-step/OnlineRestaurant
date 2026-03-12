@@ -71,9 +71,9 @@ section.SecondLine a:nth-child(3) {
     align-items: center;
 }
 
-.grayborder img {
+.grayborder {
     width: 100%;
-    height: 100px;
+    height: 100%;
 }
 
 .fourthsection .right {
