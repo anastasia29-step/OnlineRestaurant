@@ -52,11 +52,22 @@ fetch("https://restaurant.stepprojects.ge/api/Products/GetAll")
     .catch(() => body.innerHTML += `<h1> Error 404...</h1>`)
 
 function apply() {
-    let spiciness = range.value
     let checks = document.querySelectorAll(".check")
-    let nuts = checks[0].checked
+    let noNuts = checks[0].checked
     let vegeterian = checks[1].checked
-    fetch(`https://restaurant.stepprojects.ge/api/Products/GetFiltered?vegeterian=${vegeterian}&nuts=${nuts}&spiciness=${spiciness}`)
+    let spiciness = range.value
+    let url = "https://restaurant.stepprojects.ge/api/Products/GetFiltered?"
+    if (vegeterian) {
+        url += "vegeterian=true&"
+    }
+    if (noNuts) {
+        url += "nuts=false&"
+    }
+    if (spiciness != 0) {
+        url += `spiciness=${spiciness}&`
+    }
+    console.log(url);
+    fetch(url)
         .then(pasuxi => pasuxi.json())
         .then((data) => {
             right.innerHTML = ""
@@ -64,7 +75,7 @@ function apply() {
                 right.innerHTML += card(item)
             })
         })
-
+        
 }
 function reset() {
     range.value = 0

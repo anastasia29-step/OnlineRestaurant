@@ -194,6 +194,7 @@ ul li:hover::before {
     padding: 60px;
     margin-top: -140px;
     justify-content: center;
+    gap: 60px;
 }
 
 .leftSide {
@@ -217,7 +218,7 @@ ul li:hover::before {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     margin-left: 50px;
-
+    /* position: sticky; */
 }
 
 .filteredCard p {
