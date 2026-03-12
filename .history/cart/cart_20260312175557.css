@@ -42,15 +42,15 @@ section.SecondLine a:nth-child(3) {
 }
 
 .secondimg {
-    margin-top: -14px;
+    margin-top: -4px;
 
 }
 
 .secondimg img {
     width: 100%;
     height: 7px;
+    padding-bottom: 1000px;
 }
-
 ul {
     padding: 40px;
 }
