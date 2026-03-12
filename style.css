@@ -118,10 +118,12 @@ ul::after {
     margin-left: 40px;
 }
 
-.beside .right .a:hover+a img {
+.beside .right .a:hover+a img, .b{
     transform: translateX(50px);
 }
-
+.beside .right .b{
+    transition: transform 3.0s;
+}
 .beside .right img {
     width: 60px;
     margin-top: -21px;
