@@ -3,12 +3,20 @@
     padding: 0;
     box-sizing: border-box;
 }
-.main{
+
+body {
+    background-image: url(../photo/cart_bg.jpg);
+    background-position: center;
+    background-size: contain;
+}
+
+.main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
 }
+
 .FirstLine {
     height: 48vh;
     background-image: url(../photo/inner_banner.jpg);
@@ -28,6 +36,7 @@
     justify-content: space-between;
     padding: 20px 170px;
     transition: 0.3s;
+    gap: 450px;
     z-index: 1000;
 }
 
@@ -52,7 +61,7 @@
 .beside .right {
     display: flex;
     gap: 20px;
-    padding-right: 60px;
+    padding-right: 20px;
     padding-top: 20px;
 }
 
@@ -110,14 +119,56 @@
     font-family: "Roboto Slab", serif;
 }
 
+section.SecondLine {
+    background-color: #FF0000;
+    height: 35px;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    padding-left: 100px;
+    align-items: center;
+    color: white;
+    margin-top: -56px;
+}
+
+section.SecondLine a {
+    text-decoration: none;
+    color: white;
+}
+
+section.SecondLine a:nth-child(3) {
+    color: yellow;
+}
+
+.fisrtimg {
+    margin-top: -61px;
+}
+
+.fisrtimg img {
+    width: 100%;
+    height: 7px;
+}
+
+.secondimg {
+    margin-top: -61px;
+
+}
+
+.secondimg img {
+    width: 100%;
+    height: 7px;
+}
+
 form {
     width: 500px;
     box-shadow: 0 0 10px black;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 20px;
+    padding: 30px;
     margin: auto;
+    background-color: #fe1f1f;
+    border-radius: 10px;
 }
 
 .mainArea {
@@ -135,6 +186,52 @@ select {
     width: 100%;
     margin-top: 15px;
     height: 35px;
+    border-radius: 17px;
+    border: none;
+    padding: 10px;
+    color: #fe1f1f;
+    font-family: "Luckiest Guy", cursive;
+}
+
+select option {
+    color: #fe1f1f;
+}
+
+form input:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+form input:hover::placeholder {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border: none;
+}
+
+form select:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+form button {
+    height: 40px;
+    border: none;
+    border-radius: 17px;
+    color: #fe1f1f;
+    font-size: large;
+    cursor: pointer;
+    transition: 0.5s;
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 100;
+}
+
+form button:hover {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
 }
 
 footer {
@@ -164,4 +261,128 @@ footer::after {
     width: 100%;
     height: 6px;
     background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        gap: 30px;
+    }
+
+    .beside {
+        padding: 15px 50px;
+        gap: 150px;
+    }
+
+    .FirstLine {
+        padding-left: 50px;
+        height: 50vh;
+    }
+
+    .secondimg {
+        margin-top: -40px;
+    }
+
+    .fisrtimg {
+        margin-top: -22px;
+    }
+
+    .FirstLine .bottom h1 {
+        margin-right: 50px;
+        font-size: 24px;
+    }
+
+    section.SecondLine {
+        font-size: 14px;
+    }
+
+    form {
+        width: 400px;
+        padding: 20px;
+    }
+
+    .mainArea {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .beside .right a {
+        font-size: 14px;
+    }
+
+    .beside .right .a {
+        width: 40px;
+        height: 20px;
+        font-size: 12px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        background-size: cover;
+    }
+
+    .FirstLine {
+        padding-left: 20px;
+        height: 30vh;
+    }
+
+    .FirstLine .bottom h1 {
+        margin-right: 0;
+        font-size: 20px;
+        text-align: left;
+        margin-top: 120px;
+    }
+
+    .beside {
+        display: flex;
+        gap: 10px;
+    }
+
+    .beside .right {
+        gap: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section.SecondLine {
+        padding-left: 15px;
+        font-size: 12px;
+    }
+
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input,
+    select,
+    button {
+        height: 30px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .beside .right a {
+        font-size: 17px;
+    }
+
+    .firstimg img,
+    .secondimg img {
+        height: 4px;
+    }
 }

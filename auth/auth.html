@@ -12,15 +12,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+    </style>
 </head>
 
 <body>
     <section class="main">
         <section class="FirstLine">
-
             <div class="beside" id="navbar">
                 <div class="left">
-                    <a href="../index.html"><img src="../photo/border.png" alt=""></a>
+                    <a href="../index.html"><img src="../photo/logo.png" alt=""></a>
                 </div>
 
                 <div class="right">
@@ -28,29 +30,40 @@
                     <a href="../cart/cart.html" class="a">Cart</a>
                     <a href="../cart/cart.html">
                         <img src="../photo/istockphoto-609074524-612x612 Background Removed.png" alt=""></a>
-                    <a href="./auth/auth.html" class="b">Sign In</a>
+                    <a href="./auth.html" class="b" id="auth">Sign In</a>
                 </div>
             </div>
-
             <div class="bottom">
                 <h1>Fast And Efficient, Online Ordering You Must Try.</h1>
             </div>
-
         </section>
+        <div class="fisrtimg">
+            <img src="../photo/border.png" alt="" class="firBorder">
+        </div>
+
+        <section class="SecondLine">
+            <a href="../index.html">Home</a>
+            <p>/</p>
+            <a href="../cart/cart.html">Cart</a>
+        </section>
+
+        <div class="secondimg">
+            <img src="../photo/border.png" alt="" class="firBorder">
+        </div>
         <form onsubmit="register(event)">
             <div class="mainArea">
                 <div class="left">
-                    <input type="text" placeholder="firstName" name="firstName">
-                    <input type="text" placeholder="LastName" name="lastName">
+                    <input type="text" placeholder="Your Name" name="firstName">
+                    <input type="text" placeholder="Your Last Name" name="lastName">
                     <input type="email" placeholder="Email" name="email">
                     <input type="password" placeholder="Password" name="password" minlength="8">
-                    <input type="text" placeholder="address" name="address">
+                    <input type="text" placeholder="Address" name="address">
                 </div>
                 <div class="right">
-                    <input type="text" placeholder="age" name="age">
+                    <input type="text" placeholder="Your Age" name="age">
                     <input type="text" placeholder="phone" name="phone" value="+995">
-                    <input type="text" placeholder="zipcode" name="zipcode">
-                    <input type="text" placeholder="avatar" name="avatar">
+                    <input type="text" placeholder="ZipCode" name="zipcode">
+                    <input type="text" placeholder="Your Photo" name="avatar">
                     <select name="gender">
                         <option value="">Choose your gender</option>
                         <option value="MALE">Male</option>
@@ -59,7 +72,6 @@
                     </select>
                 </div>
             </div>
-
             <button>Register</button>
         </form>
 
@@ -72,7 +84,6 @@
             <p>© Step Ordering 2026, All rights reserved</p>
         </footer>
     </section>
-
     <script src="auth.js"></script>
     <script src="
 https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js

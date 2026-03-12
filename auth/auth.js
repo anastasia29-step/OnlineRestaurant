@@ -17,9 +17,10 @@ function register(e) {
                 console.log(data.errorKeys);
 
             } else {
-                alert("წარმატებულია, გაიარეთ ვერიფიკაცია!")
+                alert("You Have Registered Successfully!")
             }
         })
+    localStorage.setItem("user", JSON.stringify(data))
 
 }
 function login(e) {
@@ -38,22 +39,22 @@ function login(e) {
     }).then((pasuxi) => pasuxi.json())
         .then((data) => {
             if (data.access_token) {
-                alert("warmatebuliaaa");
+                alert("You're  Signed In!");
                 Cookies.set("user", data.access_token,)
+                localStorage.setItem("user", data.access_token)
+                window.location.href = "../index.html"
             }
             else {
                 alert(data.errorKeys[0]);
 
             }
-
-           
         })
         .catch((cudi) => {
-            console.log(cudi, "cudiiipasuxiiaaa");
-
+            console.log(cudi, "Something Is Incorrect!");
         })
-
 }
+
+let nav = document.getElementById("navbar")
 window.addEventListener("scroll", function () {
 
     if (window.scrollY > 50) {
@@ -63,3 +64,4 @@ window.addEventListener("scroll", function () {
     }
 
 })
+let auth = document.getElementById("auth")

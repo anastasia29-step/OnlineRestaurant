@@ -115,6 +115,19 @@ function card(item) {
             </div>`
 }
 function addToCart(id, price) {
+    let user = localStorage.getItem("user")
+    if (!user) {
+        right.innerHTML = ""
+        left.innerHTML = ""
+        right.innerHTML += `<div class="suggestion">
+                <img src="./photo/oops.png"
+                    alt="">
+                <h1>I see you're not signed in yet! <br> Let's go sign in or <br> if you're not registered, <br> let's
+                    register now!</h1>
+                <button onclick="auth()">Sign In Now!</button>
+            </div>`
+        return
+    }
     let info = {
         quantity: 1,
         price: price,
@@ -145,6 +158,9 @@ function addToCart(id, price) {
                 }
             })
         })
+}
+function auth() {
+    window.location.href = "./auth/auth.html"
 }
 window.addEventListener("scroll", function () {
 
