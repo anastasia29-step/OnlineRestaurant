@@ -1,4 +1,4 @@
-let kalataList = document.getElementById("kalataList")
+let kalataList = document.querySelector(".kalataList")
 function getAllCart() {
     kalataList.innerHTML = ""
     fetch("https://restaurant.stepprojects.ge/api/Baskets/GetAll")
