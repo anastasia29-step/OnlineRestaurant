@@ -58,7 +58,6 @@ ul::after {
     padding-left: 170px;
     padding-top: 20px;
 }
-
 .beside {
     position: fixed;
     top: 0;
@@ -70,7 +69,6 @@ ul::after {
     transition: 0.3s;
     z-index: 1000;
 }
-
 .beside.active {
     background: rgba(0, 0, 0, 0.8);
 }
@@ -85,6 +83,8 @@ ul::after {
     background-image: url("photo/border.png");
     background-position: bottom;
     background-repeat: repeat-x;
+    z-index: -1;
+    pointer-events: none;
 }
 
 .beside .right {
