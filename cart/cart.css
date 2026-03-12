@@ -371,3 +371,154 @@ footer::after {
     height: 6px;
     background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 1240px) {
+    .FirstLine {
+        padding-left: 50px;
+        padding-top: 10px;
+        height: 40vh;
+        background-size: cover;
+    }
+
+    .beside {
+        display: flex;
+        padding: 40px;
+    }
+
+    .beside .right {
+        padding-right: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .FirstLine .bottom h1 {
+        margin-top: 120px;
+        margin-right: 50px;
+        font-size: 24px;
+    }
+
+    .section h1 {
+        font-size: 28px;
+    }
+
+    section.SecondLine {
+        padding-left: 20px;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .fourthsection {
+        display: flex;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .last {
+        margin-left: 80%;
+        font-size: x-large;
+    }
+
+    .kalataList li {
+        display: flex;
+        width: 80%;
+        margin-left: 85px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .kalata:hover::after {
+        bottom: 110px;
+        margin-left: 193px;
+        margin-right: 196px;
+    }
+
+    .increase {
+        width: 10%;
+        justify-content: space-between;
+    }
+
+    .checkout {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    footer {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .FirstLine {
+        height: 40vh;
+    }
+
+    .beside {
+        display: flex;
+        align-items: center;
+        padding: 50px;
+        margin-top: -20px;
+    }
+
+    .beside .right {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding-right: 30px;
+        padding-top: 5px;
+    }
+
+    .FirstLine .bottom h1 {
+        font-size: 20px;
+        margin-top: 150px;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    section.SecondLine {
+        padding-left: 15px;
+        font-size: 12px;
+    }
+
+    .kalataList li {
+        width: 95%;
+        display: flex;
+        align-items: flex-start;
+        padding: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 14px;
+    }
+
+    .kalataList li img {
+        width: 50px;
+        margin-bottom: 5px;
+    }
+
+    .increase {
+        width: 60px;
+        height: 25px;
+        gap: 5px;
+    }
+
+    .checkout {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+    }
+
+    .fourthsection {
+        display: flex;
+        width: 95%;
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 10px;
+    }
+
+    footer {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
