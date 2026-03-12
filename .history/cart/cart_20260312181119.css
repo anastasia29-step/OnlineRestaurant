@@ -51,22 +51,6 @@ section.SecondLine a:nth-child(3) {
     height: 7px;
 }
 
-.right .b:hover {
-    color: #FFCC00;
-}
-
-.sia {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px;
-}
-
-.kalataList {
-    width: 80%;
-    background-color: black;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 .thirdsection {
     display: flex;
     justify-content: center;
@@ -74,47 +58,26 @@ section.SecondLine a:nth-child(3) {
     margin: 30px;
 }
 
-.fourthsection {
-    margin-left: 200px;
-    margin-right: 200px;
-    display: flex;
-    background-color: #F3F3F3;
-    justify-content: space-between;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    align-items: center;
-}
-
-
-.grayborder img {
-    width: 100%;
-    height: 100px;
-}
-
-.fourthsection .right {
-    display: flex;
-    gap: 50px;
-}
-
-.kalataList {
-    display: flex;
-    flex-direction: column;
+ul {
+    padding: 40px;
 }
 
 li {
-    /* box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
     grid-auto-rows: 70px;
     align-items: center;
     padding-inline: 40px;
     justify-content: space-between;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
+li img {
+    width: 50px;
+    height: 50px;
+}
 
 li h3 button {
     width: 30px;
