@@ -21,8 +21,13 @@ function register(e) {
             }
         })
     localStorage.setItem("user", JSON.stringify(data))
-
+    if (user) {
+        alert("You're Already Registered!")
+    } else {
+        register()
+    }
 }
+
 function login(e) {
     e.preventDefault()
 
