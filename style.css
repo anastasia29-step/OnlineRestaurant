@@ -58,6 +58,7 @@ ul::after {
     padding-left: 170px;
     padding-top: 20px;
 }
+
 .beside {
     position: fixed;
     top: 0;
@@ -69,6 +70,7 @@ ul::after {
     transition: 0.3s;
     z-index: 1000;
 }
+
 .beside.active {
     background: rgba(0, 0, 0, 0.8);
 }
@@ -98,6 +100,10 @@ ul::after {
     color: #FFCC00;
 }
 
+.right .b:hover {
+    color: #FFCC00;
+}
+
 .beside .right a {
     text-decoration: none;
     color: white;
@@ -118,12 +124,15 @@ ul::after {
     margin-left: 40px;
 }
 
-.beside .right .a:hover+a img, .b{
+.beside .right .a:hover+a img,
+.b {
     transform: translateX(50px);
 }
-.beside .right .b{
+
+.beside .right .b {
     transition: transform 3.0s;
 }
+
 .beside .right img {
     width: 60px;
     margin-top: -21px;
@@ -192,7 +201,7 @@ ul li:hover::before {
 
 .sectionCard {
     display: flex;
-    width: 100%; 
+    width: 100%;
     padding: 60px;
     margin-top: -140px;
     justify-content: center;
@@ -225,6 +234,7 @@ ul li:hover::before {
     font-size: 18px;
     margin-left: 50px;
 }
+
 .filteredCard p {
     margin-top: -5px;
     margin-bottom: 10px;

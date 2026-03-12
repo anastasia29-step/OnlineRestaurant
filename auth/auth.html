@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <section class="main">
+        <section class="FirstLine">
+
+            <div class="beside" id="navbar">
+                <div class="left">
+                    <a href="../index.html"><img src="../photo/border.png" alt=""></a>
+                </div>
+
+                <div class="right">
+                    <a href="../index.html">Home</a>
+                    <a href="../cart/cart.html" class="a">Cart</a>
+                    <a href="../cart/cart.html">
+                        <img src="../photo/istockphoto-609074524-612x612 Background Removed.png" alt=""></a>
+                    <a href="./auth/auth.html" class="b">Sign In</a>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <h1>Fast And Efficient, Online Ordering You Must Try.</h1>
+            </div>
+
+        </section>
+        <form onsubmit="register(event)">
+            <div class="mainArea">
+                <div class="left">
+                    <input type="text" placeholder="firstName" name="firstName">
+                    <input type="text" placeholder="LastName" name="lastName">
+                    <input type="email" placeholder="Email" name="email">
+                    <input type="password" placeholder="Password" name="password" minlength="8">
+                    <input type="text" placeholder="address" name="address">
+                </div>
+                <div class="right">
+                    <input type="text" placeholder="age" name="age">
+                    <input type="text" placeholder="phone" name="phone" value="+995">
+                    <input type="text" placeholder="zipcode" name="zipcode">
+                    <input type="text" placeholder="avatar" name="avatar">
+                    <select name="gender">
+                        <option value="">Choose your gender</option>
+                        <option value="MALE">Male</option>
+                        <option value="FEMALE">Female</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <button>Register</button>
+        </form>
+
+        <form onsubmit="login(event)">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password" name="password" minlength="8">
+            <button>SIGN IN</button>
+        </form>
+        <footer>
+            <p>© Step Ordering 2026, All rights reserved</p>
+        </footer>
+    </section>
+
+    <script src="auth.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js
+"></script>
+</body>
+
+</html>
