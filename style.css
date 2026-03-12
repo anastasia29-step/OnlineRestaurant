@@ -405,7 +405,6 @@ ul li:hover::before {
     display: flex;
     gap: 3px;
 }
-
 .card .bottom {
     width: 100%;
     padding: 10px;
