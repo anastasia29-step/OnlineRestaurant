@@ -58,7 +58,7 @@ section.SecondLine a:nth-child(3) {
 
 .kalataList {
     width: 80%;
-    background-color: black;
+    /* background-color: black; */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
@@ -83,7 +83,22 @@ section.SecondLine a:nth-child(3) {
     padding-top: 20px;
     align-items: center;
 }
-
+.fourthsection p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+.fourthsection::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 151px;
+    background: url(../photo/gray_Hborder.png);
+    height: 6px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
 
 .grayborder img {
     width: 100%;
