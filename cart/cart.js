@@ -8,12 +8,12 @@ function getAllCart() {
 getAllCart()
 function list(item) {
     return `<li>
+            <button onclick="remove(${item.product.id})">X</button>
             <img src="${item.product.image}" alt="">
             <h3>${item.product.name}</h3>
-            <h3><button onclick="increase(${item.quantity}, ${item.product.id}, ${item.price})">+</button> ${item.quantity}  <button onclick="decrease(${item.quantity}, ${item.product.id}, ${item.price})">-</button> </h3>
+            <h3 class="increase"><button onclick="increase(${item.quantity}, ${item.product.id}, ${item.price})">+</button> ${item.quantity}  <button onclick="decrease(${item.quantity}, ${item.product.id}, ${item.price})">-</button> </h3>
             <h3> ${item.price} ₾ </h3>
             <h3> ${item.quantity * item.price} ₾ </h3>
-            <button onclick="remove(${item.product.id})">X</button>
         </li>`
 }
 function increase(quantity, id, price) {
@@ -54,13 +54,14 @@ function decrease(quantity, id, price) {
         .then(() => getAllCart())
 }
 function remove(id) {
-    fetch(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`,{
-        method:"DELETE",
+    fetch(`https://restaurant.stepprojects.ge/api/Baskets/DeleteProduct/${id}`, {
+        method: "DELETE",
         headers: {
             accept: "*/*"
-        }})
+        }
+    })
         .then(pasuxi => {
-            if(!pasuxi.ok){
+            if (!pasuxi.ok) {
                 throw new Error("Failed To Remove Product")
             }
         })
@@ -73,7 +74,7 @@ function remove(id) {
             console.error("Error removing product", error)
             alert("Something Went Wrong! Product Was Not Removed")
         })
-       
+
 }
 
 let nav = document.getElementById("navbar")

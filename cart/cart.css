@@ -58,7 +58,6 @@ section.SecondLine a:nth-child(3) {
 
 .kalataList {
     width: 80%;
-    /* background-color: black; */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
@@ -70,7 +69,10 @@ section.SecondLine a:nth-child(3) {
     align-items: center;
     margin: 30px;
 }
-
+.mainList{
+    display: flex;
+    flex-direction: column;
+}
 .fourthsection {
     margin-left: 200px;
     margin-right: 200px;
@@ -111,21 +113,18 @@ section.SecondLine a:nth-child(3) {
 }
 
 
-li h3 button {
-    width: 30px;
-    height: 30px;
+.kalataList li{
+    display: flex;
+    margin-left: 200px;
+    margin-right: 200px;
 }
-
-
-li>button {
-    background-color: red;
-    width: 60px;
-    height: 50px;
-    display: block;
-    margin: auto;
+.kalataList li img{
+    width: 100px;
+    height: 100px;
 }
-
-
+.kalataList li:hover{
+    background-color: #F3F3F3;
+}
 
 footer {
     margin-top: 1000px;
